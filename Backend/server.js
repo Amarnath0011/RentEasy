@@ -22,16 +22,10 @@ app.use(cors({
 
 app.use(cookieParser());
 app.use(express.json({ limit: "10mb" }));
-
-
 app.use('/api/auth', authRoutes);
 app.use('/api/listing', listingRoutes);
 app.use('/api/review', reviewRoutes);
 app.use('/api/admin', adminRoutes);
-
-
-
-
 app.use(cors());
 
 app.listen(PORT, () => {

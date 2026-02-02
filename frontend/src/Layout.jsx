@@ -13,4 +13,26 @@ function Layout({ children }) {
   );
 }
 
+
+import { useAuth } from "./context/AuthContext";
+
+function TestAuth() {
+  const { user, logout } = useAuth();
+
+  return (
+    <div>
+      {user ? (
+        <>
+          <p>Logged in: {user.email || user.phoneNumber}</p>
+          <button onClick={logout}>Logout</button>
+        </>
+      ) : (
+        <p>Not logged in</p>
+      )}
+    </div>
+  );
+}
+
+
+
 export default Layout;
